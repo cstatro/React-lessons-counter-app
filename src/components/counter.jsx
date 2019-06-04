@@ -11,6 +11,12 @@ export default class Counter extends Component {
           Increment
         </button>
         <button
+          onClick={() => this.props.onDecrease(this.props.counter)}
+          className="btn btn-dark"
+        >
+          Decrease
+        </button>
+        <button
           onClick={() => this.props.onDelete(this.props.id)}
           className="btn btn-danger btn-sm m-2"
         >
