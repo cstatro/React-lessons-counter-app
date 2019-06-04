@@ -17,12 +17,12 @@ export default class Counter extends Component {
         <td>
           <button
             onClick={() => this.props.onDecrease(this.props.counter)}
-            className="btn btn-dark"
+            className={this.formatDecrease()}
           >
             Decrease
           </button>
         </td>
-        <td colw>
+        <td colSpan="1">
           <button
             onClick={() => this.props.onDelete(this.props.id)}
             className="btn btn-danger btn-sm m-2"
@@ -43,5 +43,10 @@ export default class Counter extends Component {
   formatCount = () => {
     const count = this.props.value;
     return count === 0 ? "Zero" : count;
+  };
+  formatDecrease = () => {
+    let classes = "btn btn-";
+    classes += this.props.value === 0 ? "light" : "dark";
+    return classes;
   };
 }
