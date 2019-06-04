@@ -9,18 +9,20 @@ class Counters extends Component {
         <button onClick={onReset} className="btn btn-sm btn-primary m-2">
           Reset
         </button>
-        {counters.map(counter => (
-          <Counter
-            key={counter.id}
-            id={counter.id}
-            counter={counter}
-            onDelete={onDelete}
-            onIncrement={onIncrement}
-            value={counter.value}
-            onDecrease={onDecrease}
-            selected={true}
-          />
-        ))}
+        <table>
+          {counters.map(counter => (
+            <Counter
+              key={counter.id}
+              id={counter.id}
+              counter={counter}
+              onDelete={onDelete}
+              onIncrement={onIncrement}
+              value={counter.value}
+              onDecrease={onDecrease}
+              selected={true}
+            />
+          ))}
+        </table>
       </div>
     );
   }
